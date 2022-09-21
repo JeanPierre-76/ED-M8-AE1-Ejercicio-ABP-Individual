@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @beginning %>
+
+<div>
+  <%= link_to "Editar este inicio", edit_beginning_path(@beginning) %> |
+  <%= link_to "Volver a inicios", beginnings_path %>
+
+  <%= button_to "Destruir este inicio", @beginning, method: :delete %>
+</div>

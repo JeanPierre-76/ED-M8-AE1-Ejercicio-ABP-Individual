@@ -1,0 +1,781 @@
+  [1m[35m (19.4ms)[0m  [1m[35mCREATE DATABASE `Blog2_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE DATABASE `Blog2_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE DATABASE `Blog2_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE DATABASE `Blog2_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (58.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (32.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('4871746146632018535', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateBeginnings (20220916013921)
+  [1m[35m (34.0ms)[0m  [1m[35mCREATE TABLE `beginnings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` text, `correo` text, `descripcion_de_tu_perfil_hobbies_y_pasiones` text, `ultimos_dos_trabajos_o_estudios` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220916013921')[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2022-09-16 01:41:56.608729', '2022-09-16 01:41:56.608729')[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4871746146632018535')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-15 22:42:17 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 99.2ms | Allocations: 5664)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 111.6ms | Allocations: 6385)
+  Rendered layout layouts/application.html.erb (Duration: 485.1ms | Allocations: 74184)
+Completed 500 Internal Server Error in 585ms (ActiveRecord: 4.9ms | Allocations: 84650)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (D:/M8/individual1/Blog2/tmp/cache/assets/sprockets/v4.0.0/ut/utTN1Z9jJd_Hwh-BCge_NdWnzRvi2suQwUloiH7TRVc.cache.21740.7968.113276, D:/M8/individual1/Blog2/tmp/cache/assets/sprockets/v4.0.0/ut/utTN1Z9jJd_Hwh-BCge_NdWnzRvi2suQwUloiH7TRVc.cache)):
+  
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.1.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.1.1) lib/sprockets/loader.rb:266:in `store_asset'
+sprockets (4.1.1) lib/sprockets/loader.rb:226:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.1.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2022-09-15 22:46:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 33.1ms | Allocations: 3996)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 36.0ms | Allocations: 4590)
+  Rendered layout layouts/application.html.erb (Duration: 214.1ms | Allocations: 28683)
+Completed 200 OK in 249ms (Views: 221.4ms | ActiveRecord: 3.5ms | Allocations: 37621)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('4871746146632018535', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateContacts (20220916015217)
+  [1m[35m (96.6ms)[0m  [1m[35mCREATE TABLE `contacts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `nombre` text, `correo` text, `comentarios` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220916015217')[0m
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4871746146632018535')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-15 22:55:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 39.0ms | Allocations: 4099)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 42.6ms | Allocations: 4693)
+  Rendered layout layouts/application.html.erb (Duration: 148.8ms | Allocations: 26716)
+Completed 200 OK in 184ms (Views: 156.8ms | ActiveRecord: 5.2ms | Allocations: 35671)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-15 22:55:34 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 2.5ms | Allocations: 1657)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1752)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2888)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 3248)
+
+
+Started GET "/newspapers" for 127.0.0.1 at 2022-09-15 23:11:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/newspapers"):
+  
+Started GET "/newspapers" for 127.0.0.1 at 2022-09-15 23:11:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/newspapers"):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-15 23:12:26 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 102.4ms | Allocations: 3961)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 106.4ms | Allocations: 4296)
+  Rendered layout layouts/application.html.erb (Duration: 216.6ms | Allocations: 26254)
+Completed 200 OK in 268ms (Views: 238.6ms | ActiveRecord: 3.5ms | Allocations: 34078)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 17:07:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (12.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 160.4ms | Allocations: 3933)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 212.2ms | Allocations: 4527)
+  Rendered layout layouts/application.html.erb (Duration: 559.7ms | Allocations: 26554)
+Completed 200 OK in 762ms (Views: 624.2ms | ActiveRecord: 3.7ms | Allocations: 35508)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 22:26:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 145.9ms | Allocations: 3602)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 168.0ms | Allocations: 4195)
+  Rendered layout layouts/application.html.erb (Duration: 530.0ms | Allocations: 25884)
+Completed 200 OK in 687ms (Views: 561.5ms | ActiveRecord: 10.6ms | Allocations: 34360)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-17 00:19:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 80.2ms | Allocations: 3933)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 104.2ms | Allocations: 4527)
+  Rendered layout layouts/application.html.erb (Duration: 293.8ms | Allocations: 26560)
+Completed 200 OK in 355ms (Views: 302.7ms | ActiveRecord: 18.2ms | Allocations: 35516)
+
+
+Started POST "/beginnings" for 127.0.0.1 at 2022-09-17 00:20:40 -0300
+Processing by BeginningsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "beginning"=>{"name"=>"Juan Perez", "correo"=>"jp@gmail.com", "descripcion_de_tu_perfil_hobbies_y_pasiones"=>"Futbol, fiestas", "ultimos_dos_trabajos_o_estudios"=>"Ninguno"}, "commit"=>"Create Beginning"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+  [1m[36mBeginning Create (36.2ms)[0m  [1m[32mINSERT INTO `beginnings` (`name`, `correo`, `descripcion_de_tu_perfil_hobbies_y_pasiones`, `ultimos_dos_trabajos_o_estudios`, `created_at`, `updated_at`) VALUES ('Juan Perez', 'jp@gmail.com', 'Futbol, fiestas', 'Ninguno', '2022-09-17 03:20:41.049401', '2022-09-17 03:20:41.049401')[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/beginnings/1
+Completed 302 Found in 67ms (ActiveRecord: 47.8ms | Allocations: 3916)
+
+
+Started GET "/beginnings/1" for 127.0.0.1 at 2022-09-17 00:20:41 -0300
+Processing by BeginningsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBeginning Load (4.0ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings` WHERE `beginnings`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/beginnings_controller.rb:63:in `set_beginning'
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/show.html.erb within layouts/application
+  Rendered beginnings/_beginning.html.erb (Duration: 19.0ms | Allocations: 246)
+  Rendered beginnings/show.html.erb within layouts/application (Duration: 52.7ms | Allocations: 1575)
+  Rendered layout layouts/application.html.erb (Duration: 57.7ms | Allocations: 2705)
+Completed 200 OK in 132ms (Views: 59.4ms | ActiveRecord: 4.0ms | Allocations: 5590)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-17 00:20:46 -0300
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.5ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1311)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 2351)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.5ms | Allocations: 2757)
+
+
+Started GET "/beginnings/new" for 127.0.0.1 at 2022-09-17 00:20:48 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 2.0ms | Allocations: 1523)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1611)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2650)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms | Allocations: 2946)
+
+
+Started POST "/beginnings" for 127.0.0.1 at 2022-09-17 00:21:42 -0300
+Processing by BeginningsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "beginning"=>{"name"=>"Pedro Gonzalez", "correo"=>"pedro12@vtr.net", "descripcion_de_tu_perfil_hobbies_y_pasiones"=>"Tenis, guitarra", "ultimos_dos_trabajos_o_estudios"=>"Construccion"}, "commit"=>"Create Beginning"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+  [1m[36mBeginning Create (2.1ms)[0m  [1m[32mINSERT INTO `beginnings` (`name`, `correo`, `descripcion_de_tu_perfil_hobbies_y_pasiones`, `ultimos_dos_trabajos_o_estudios`, `created_at`, `updated_at`) VALUES ('Pedro Gonzalez', 'pedro12@vtr.net', 'Tenis, guitarra', 'Construccion', '2022-09-17 03:21:42.731551', '2022-09-17 03:21:42.731551')[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/beginnings/2
+Completed 302 Found in 13ms (ActiveRecord: 5.9ms | Allocations: 2438)
+
+
+Started GET "/beginnings/2" for 127.0.0.1 at 2022-09-17 00:21:42 -0300
+Processing by BeginningsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBeginning Load (0.3ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings` WHERE `beginnings`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/beginnings_controller.rb:63:in `set_beginning'
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/show.html.erb within layouts/application
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered beginnings/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1609)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 2410)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-17 00:23:27 -0300
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.3ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1097)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2133)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 2411)
+
+
+Started GET "/beginnings/new" for 127.0.0.1 at 2022-09-17 00:23:29 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 1.6ms | Allocations: 1463)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2586)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 2868)
+
+
+Started POST "/beginnings" for 127.0.0.1 at 2022-09-17 00:24:03 -0300
+Processing by BeginningsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "beginning"=>{"name"=>"Laura Palmer", "correo"=>"lp@nbc.com", "descripcion_de_tu_perfil_hobbies_y_pasiones"=>"Seriales TV", "ultimos_dos_trabajos_o_estudios"=>"Ripley"}, "commit"=>"Create Beginning"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+  [1m[36mBeginning Create (0.4ms)[0m  [1m[32mINSERT INTO `beginnings` (`name`, `correo`, `descripcion_de_tu_perfil_hobbies_y_pasiones`, `ultimos_dos_trabajos_o_estudios`, `created_at`, `updated_at`) VALUES ('Laura Palmer', 'lp@nbc.com', 'Seriales TV', 'Ripley', '2022-09-17 03:24:03.363633', '2022-09-17 03:24:03.363633')[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (29.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beginnings_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/beginnings/3
+Completed 302 Found in 39ms (ActiveRecord: 30.3ms | Allocations: 2344)
+
+
+Started GET "/beginnings/3" for 127.0.0.1 at 2022-09-17 00:24:03 -0300
+Processing by BeginningsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBeginning Load (1.2ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings` WHERE `beginnings`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/beginnings_controller.rb:63:in `set_beginning'
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/show.html.erb within layouts/application
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered beginnings/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 582)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1610)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 1.2ms | Allocations: 2398)
+
+
+  [1m[36mBeginning Load (0.4ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+Started GET "/" for 127.0.0.1 at 2022-09-18 23:05:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (46.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 110.7ms | Allocations: 4075)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 127.6ms | Allocations: 4669)
+  Rendered layout layouts/application.html.erb (Duration: 755.5ms | Allocations: 26722)
+Completed 200 OK in 867ms (Views: 773.9ms | ActiveRecord: 4.0ms | Allocations: 35677)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-18 23:10:57 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 26.2ms | Allocations: 2218)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 29.1ms | Allocations: 2532)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 3883)
+Completed 200 OK in 71ms (Views: 47.8ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-18 23:13:21 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 22.5ms | Allocations: 2190)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 24.5ms | Allocations: 2497)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 3845)
+Completed 200 OK in 41ms (Views: 39.1ms | Allocations: 4682)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-18 23:13:25 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 2.0ms | Allocations: 1579)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1666)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2704)
+Completed 200 OK in 7ms (Views: 6.2ms | Allocations: 3020)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-18 23:40:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 21.1ms | Allocations: 4180)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 26.2ms | Allocations: 4778)
+  Rendered layout layouts/application.html.erb (Duration: 164.4ms | Allocations: 26750)
+Completed 200 OK in 201ms (Views: 172.4ms | ActiveRecord: 4.5ms | Allocations: 35705)
+
+
+Started GET "/contact" for 127.0.0.1 at 2022-09-18 23:40:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/contact"):
+  
+Started GET "/contacts" for 127.0.0.1 at 2022-09-18 23:40:58 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (557.9ms)[0m  [1m[34mSELECT `contacts`.* FROM `contacts`[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 582.9ms | Allocations: 1414)
+  Rendered layout layouts/application.html.erb (Duration: 586.8ms | Allocations: 2639)
+Completed 200 OK in 596ms (Views: 32.4ms | ActiveRecord: 557.9ms | Allocations: 3907)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2022-09-18 23:41:03 -0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 48.2ms | Allocations: 1912)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 50.2ms | Allocations: 2180)
+  Rendered layout layouts/application.html.erb (Duration: 53.4ms | Allocations: 3218)
+Completed 200 OK in 66ms (Views: 54.6ms | ActiveRecord: 5.9ms | Allocations: 6087)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2022-09-18 23:41:22 -0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 1.5ms | Allocations: 1316)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1403)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2441)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 2730)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-09-18 23:41:39 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT `contacts`.* FROM `contacts`[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 901)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 1937)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms | Allocations: 2217)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-09-18 23:45:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT `contacts`.* FROM `contacts`[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1856)
+  Rendered layout layouts/application.html.erb (Duration: 118.7ms | Allocations: 23896)
+Completed 200 OK in 184ms (Views: 128.7ms | ActiveRecord: 0.7ms | Allocations: 27894)
+
+
+Started GET "/Contacto" for 127.0.0.1 at 2022-09-18 23:45:22 -0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 18.8ms | Allocations: 3584)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 20.5ms | Allocations: 3919)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 5068)
+Completed 200 OK in 66ms (Views: 27.9ms | ActiveRecord: 8.8ms | Allocations: 10020)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-18 23:45:57 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 3.6ms | Allocations: 2376)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2706)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 3906)
+Completed 200 OK in 26ms (Views: 13.0ms | ActiveRecord: 3.3ms | Allocations: 8102)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-18 23:46:02 -0300
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (398.5ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/_beginning.html.erb (Duration: 1.2ms | Allocations: 252)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 1275.3ms | Allocations: 2380)
+  Rendered layout layouts/application.html.erb (Duration: 1283.1ms | Allocations: 3532)
+Completed 200 OK in 1287ms (Views: 886.4ms | ActiveRecord: 398.5ms | Allocations: 3990)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-18 23:47:24 -0300
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.3ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/_beginning.html.erb (Duration: 0.5ms | Allocations: 203)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2090)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3451)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 4309)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-18 23:50:51 -0300
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.5ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/_beginning.html.erb (Duration: 0.5ms | Allocations: 203)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2091)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3450)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.5ms | Allocations: 4293)
+
+
+Started GET "/beginnings/1" for 127.0.0.1 at 2022-09-18 23:50:56 -0300
+Processing by BeginningsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBeginning Load (0.7ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings` WHERE `beginnings`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/beginnings_controller.rb:63:in `set_beginning'
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/show.html.erb within layouts/application
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered beginnings/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1024)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2153)
+Completed 200 OK in 163ms (Views: 8.6ms | ActiveRecord: 0.7ms | Allocations: 11385)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-18 23:51:00 -0300
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.3ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1401)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2438)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 2721)
+
+
+Started GET "/beginnings/new" for 127.0.0.1 at 2022-09-18 23:51:03 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 23.4ms | Allocations: 2055)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 25.5ms | Allocations: 2317)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 3353)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms | Allocations: 3694)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-18 23:51:06 -0300
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.4ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered beginnings/_beginning.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1390)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2426)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms | Allocations: 2704)
+
+
+Started GET "/beginnings/new" for 127.0.0.1 at 2022-09-18 23:51:13 -0300
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 2.3ms | Allocations: 1582)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1669)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2705)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 2987)
+
+
+Started GET "/Contacto" for 127.0.0.1 at 2022-09-18 23:52:46 -0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 25.5ms | Allocations: 1896)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 27.3ms | Allocations: 2217)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 3411)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 4029)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-09-18 23:54:23 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT `contacts`.* FROM `contacts`[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2672)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.4ms | Allocations: 3516)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-09-18 23:57:21 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (2.0ms)[0m  [1m[34mSELECT `contacts`.* FROM `contacts`[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1329)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 2689)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 2.0ms | Allocations: 3533)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2022-09-18 23:57:24 -0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 12.7ms | Allocations: 1773)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 2039)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 3075)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 3436)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2022-09-20 21:26:25 -0400
+  
+ActiveRecord::NoDatabaseError (We could not find your database: Blog2_development. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+):
+  
+activerecord (7.0.4) lib/active_record/connection_adapters/mysql2_adapter.rb:47:in `rescue in new_client'
+activerecord (7.0.4) lib/active_record/connection_adapters/mysql2_adapter.rb:43:in `new_client'
+activerecord (7.0.4) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `mysql2_connection'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (37.9ms)[0m  [1m[35mCREATE DATABASE `Blog2_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE DATABASE `Blog2_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (83.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (97.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4871746146632018535', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateBeginnings (20220916013921)
+  [1m[35m (105.8ms)[0m  [1m[35mCREATE TABLE `beginnings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` text, `correo` text, `descripcion_de_tu_perfil_hobbies_y_pasiones` text, `ultimos_dos_trabajos_o_estudios` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220916013921')[0m
+  [1m[36mTRANSACTION (41.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20220916015217)
+  [1m[35m (691.6ms)[0m  [1m[35mCREATE TABLE `contacts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `nombre` text, `correo` text, `comentarios` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220916015217')[0m
+  [1m[36mTRANSACTION (98.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2022-09-21 01:26:56.028137', '2022-09-21 01:26:56.028137')[0m
+  [1m[36mTRANSACTION (76.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4871746146632018535')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/products/new" for 127.0.0.1 at 2022-09-20 21:27:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/products/new"):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-20 21:28:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 125.5ms | Allocations: 5793)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 138.8ms | Allocations: 6391)
+  Rendered layout layouts/application.html.erb (Duration: 514.9ms | Allocations: 29983)
+Completed 500 Internal Server Error in 649ms (ActiveRecord: 3.0ms | Allocations: 39449)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (D:/M8/individual1/Blog2/tmp/cache/assets/sprockets/v4.0.0/K-/K-oO2HsbcNBtJbJRFkIPsDSlySiHmpY1YFAFlMWP3kQ.cache.22760.14668.925788, D:/M8/individual1/Blog2/tmp/cache/assets/sprockets/v4.0.0/K-/K-oO2HsbcNBtJbJRFkIPsDSlySiHmpY1YFAFlMWP3kQ.cache)):
+  
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.1.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:93:in `fetch'
+sprockets (4.1.1) lib/sprockets/base.rb:71:in `file_digest'
+sprockets (4.1.1) lib/sprockets.rb:213:in `block in <module:Sprockets>'
+sprockets (4.1.1) lib/sprockets/dependencies.rb:68:in `resolve_dependency'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:54:in `block in resolve_dependency'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:54:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:54:in `resolve_dependency'
+sprockets (4.1.1) lib/sprockets/loader.rb:288:in `block in resolve_dependencies'
+sprockets (4.1.1) lib/sprockets/loader.rb:288:in `map'
+sprockets (4.1.1) lib/sprockets/loader.rb:288:in `resolve_dependencies'
+sprockets (4.1.1) lib/sprockets/loader.rb:54:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:331:in `block in fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:327:in `each'
+sprockets (4.1.1) lib/sprockets/loader.rb:327:in `each_with_index'
+sprockets (4.1.1) lib/sprockets/loader.rb:327:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.1.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2022-09-20 21:29:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 17.9ms | Allocations: 4126)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 21.7ms | Allocations: 4724)
+  Rendered layout layouts/application.html.erb (Duration: 168.4ms | Allocations: 26219)
+Completed 200 OK in 217ms (Views: 180.2ms | ActiveRecord: 3.7ms | Allocations: 35174)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-20 21:29:57 -0400
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.5ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1419)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 2562)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.5ms | Allocations: 3073)
+
+
+Started GET "/beginnings/new" for 127.0.0.1 at 2022-09-20 21:29:58 -0400
+Processing by BeginningsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/new.html.erb within layouts/application
+  Rendered beginnings/_form.html.erb (Duration: 3.7ms | Allocations: 1702)
+  Rendered beginnings/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1793)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 2831)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 3127)
+
+
+Started GET "/beginnings" for 127.0.0.1 at 2022-09-20 21:30:01 -0400
+Processing by BeginningsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering beginnings/index.html.erb within layouts/application
+  [1m[36mBeginning Load (0.4ms)[0m  [1m[34mSELECT `beginnings`.* FROM `beginnings`[0m
+  ↳ app/views/beginnings/index.html.erb:6
+  Rendered beginnings/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 952)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1990)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 2276)
+
+
+Started GET "/Contacto" for 127.0.0.1 at 2022-09-20 21:30:09 -0400
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 29.7ms | Allocations: 2092)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 44.9ms | Allocations: 2418)
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 3616)
+Completed 200 OK in 82ms (Views: 54.0ms | ActiveRecord: 4.4ms | Allocations: 7339)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-09-20 21:30:13 -0400
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT `contacts`.* FROM `contacts`[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 2324)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 1.0ms | Allocations: 2769)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2022-09-20 21:30:14 -0400
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 1.8ms | Allocations: 1378)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1465)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2502)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 2789)
+
+

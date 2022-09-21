@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Inicios</h1>
+
+<div id="beginnings">
+  <% @beginnings.each do |beginning| %>
+    <%= render beginning %>
+    <p>
+      <%= link_to "Mostrar este inicio", beginning %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nuevo inicio", new_beginning_path %>
